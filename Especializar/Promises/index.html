@@ -1,0 +1,35 @@
+<!-- 
+
+    Promise
+
+    - um objeto JavaScript com a promessa de que algo vai ser realizado
+    - usado para operacoes assincronas: carregar arquivos, e leitura de dados de uma API
+
+    Promise tem 4 estagios:
+    - pending : estado inicial
+    - fulfilled: promessa foi concluida com sucesso
+    - rejected: promessa foi rejeitada, houve erro
+    - settled: com sucesso ou com erro, foi finalmente concluida
+
+    fetch('https://api.github.com/users/maykbrito').then(response => response.json()).then(data => fetch(data.repos_url)).then(res => res.json()).then(d => console.log(d)).catch(erro => console.log("Deu erro guri")).finally(() => console.log("busca encerrada"));
+
+
+    import axios from "axios"
+
+    axios
+    .get("https://api.github.com/users/maykbrito")
+    .then(response => axios.get(response.data.repos_url))
+    .then(userData => console.log(userData.data))
+    .catch(error => console.log(error))
+
+
+    Promise.all([
+    axios.get("https://api.github.com/users/maykbrito"),
+    axios.get("https://api.github.com/users/maykbrito/repos")
+    ])
+    .then(responses => {
+    console.log(responses[0].data.login, responses[1].data.length)
+    })
+    .catch(erro => console.log(erro.message))
+
+  -->

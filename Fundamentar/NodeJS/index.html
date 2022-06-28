@@ -1,0 +1,25 @@
+<!-- 
+    NODE JS
+
+
+    - FRAMEWORK normalmente eh um conjunto de regras e estrategias ja aplicadas em algum tipo de pacote 
+
+    - Apache trabalha com muitas thread (garçons), cada pedido feito pelo usuario (cliente) é feito por request para o servidor (cozinha)
+
+    - NODE - eh single threaded (possui so um garçom), non-blocking (garçom n bloqueia nada), e asynchronous (nao espera a resposta do servidor)
+
+
+    - EVENT LOOP - se trata da forma como trata o single thread. O evento loop executa os eventos da fila de eventos (event queue), e para operacoes assincronas, ele joga para uma outra fila para que quando for executada, retorne para a fila de eventos. Todo o codigo na fila de eventos eh executado antes da outra fila, pois espera a fila de eventos acabar
+
+    -FUNCAO REQUIRE() - uma maneira de chamar modulos q ja sao nativos no NODE JS ou modulos q criarmos
+
+    -PROCESS - todas as informacoes do processo que esta rodando no momento no node
+
+    - comandos npm: outdated, upgrade
+
+
+    - setTimeout roda uma funcao dps de X milissegundos
+    - clearTimeout cancela uma time out 
+
+    - Diferenca entre event.on e event.once eh que o on vai ficar aguardando evento para ser executado, ja o once executa apenas uma vez
+ -->

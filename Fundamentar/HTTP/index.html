@@ -1,0 +1,208 @@
+<!-- 
+    - Permite troca de informacoes e dados na internet
+    - Uma troca de mensagens
+    - A mensagem pode ser HTML, CSS, Imagens, Videos
+    - Uma chamada para cada recurso
+ -->
+
+<!-- 
+    MESSAGE da request ou do response
+
+    - Para o pedido, eh exigido que especifique o que quero fazer, e qual o tipo de pedido
+    - Para cade pedido, tem um cabeçalho e o corpo
+    - Ao fazer um pedido, vc tentara acessar o recurso, ou local que foi enviado pedido
+
+
+
+
+
+    - Para a resposta, primeiro retorna a resposta do servidor sobre o estado do pedido/resposta
+  -->
+
+<!-- 
+    Tudo eh uma troca de mensagens entre o cliente e o servidor
+
+    - Stateless - n guarda estados, ou seja, nao guarda relacoes entre conexoes, cada vez gera uma relacao diferente
+
+    - Sessoes - formas de continuar as sessoes como usuarios, meios como cookies, storages servem para esse quesito
+   -->
+<!-- 
+    Quem eh o cliente?
+
+    - O cliente eh o User Agent - pode ser browser ou CURL - a entidade que da inicio a comunicacao
+
+    - O cliente faz pedidos ao servidor por meio das acoes do cliente - GET, POST, PUT, DELETE
+ -->
+
+<!-- 
+    Quem eh o servidor?
+
+    - O servidor se apresenta como uma maquina em algum lugar do mundo, e ela esta preparada para ouvir e processar os dados para retornar resposta.
+    - Um PC pode tem diversos Servidores, e vice versa
+    - Encarregado de retornar resposta
+  -->
+
+<!-- 
+    Quem sao os proxies?
+
+    - Algo que fica entre o cliente e o servidor, e ajudam a fazer tranposrte de dados
+   -->
+
+<!-- 
+        Estrutura de um endereco - URI - Uniform Resource identifier -> identificador de maneira uniforme que vai identificar um recurso
+
+        - Resource: o alvo do pedido HTTP. Se podemos identificar, nomear, enderecar ou manipular, falamos de um recurso
+
+        - Podemos procurar pelo locator (URL - Uniform resource locator - localiza pelo nome) 
+        - URL precisa de 2 componentes obrigatorios (protocolo e dominio) e 5 opcionais:
+        -> Subdominio: www - alguns precisam e outros nao
+        -> Path - o caminho
+        -> Parametros - opcionais e servem para identificar algo na internet, como video no Youtube
+        -> Porta - algum local dentro do servidor esta disponivel para eu chegar
+        -> Ancora - opcional, um local dentro do documento  
+    -->
+
+<!-- 
+      HTTP Messages
+
+      - Mensagens eh tudo que eh enviado num request ou que volta de uma response 
+
+
+      PEDIDOS
+
+      - composto por metodos (um verbo que dira a intencao deste pedido)
+      - Precisamos colocar qual a versao do pedido
+      - Precisamos colocar qual URI
+
+      RESPONSE
+      
+      - Por padrao vamos receber a versao do protocolo, status code (que diz se deu certo ou se deu erro), header, e a mensagem em si (o corpo  )
+     -->
+
+<!-- 
+
+      HTTP METHODS
+
+      - eh a acao que o cliente quer realizar
+
+      CARACTERISTICAS
+
+      - Seguro: - Nao altera o estado do servidor
+                - Somente leitura
+                - Cliente nao solicita alteracoes, somente vai pedir uma pagina
+                - Nao ha carga extra para o servidor te responder 
+                - Servidor eh responsavel em manter o metodo seguro
+                - GET, HEAD, OPTIONS
+
+      - Idempotente: - Ao executar o metodo, a respota devera ser sempre a mesma, mesmo dando F5, a pagina retorna a mesma response
+                     - Todos seguros sao idempotentes, PUT e DELETE tbm (estes dois ultimos n sao seguros, pois sao usados para atualizar um recurso e deletar, logo fazem alteracao direto no servidor)
+                     - O status code podera ser diferente
+                     - Server tem a responsabilidade de retornar dados da mesma maneira
+
+      GET - idempotente - seguro
+      HEAD - idempotente - seguro
+      PUT - idempotente - nao seguro
+      DELETE - idempotente - nao seguro
+      POST - nao idempotente - nao seguro
+      PATCH - nao idempotente - nao seguro
+
+      -->
+
+<!-- 
+        GET
+
+        - pegar um recurso, e somente recebe dados
+        - Seguro, idempotente, na hora de enviar o pedido n pode enviar nada no body, no response eu recebo um body como resposta, cacheable (guardar algo na memoria para poder responder algo mais rapido), e usa em formularios HTML em buscas
+       -->
+<!-- 
+
+  HEAD
+
+  - semelhante ao GET, porem recebe somente o cabecalho
+  - seguro, idempotente, n tem body nem pro request e nem pro response
+ -->
+
+<!-- 
+  POST
+
+  - Publicar / cadastrar algum recurso em algum lugar
+  - nao eh seguro, nao eh idempotente, o corpo vai existir tanto na response quanto request
+  - uso em formularios html para cadastrar usuario
+  -podera ser cacheable 
+  -->
+
+<!-- 
+
+    PUT
+
+    - cria um novo ou atualiza recurso
+    - n eh seguro, idempotente
+    - diferenca entre POST eh que ele eh utilizado mais pra atualizar recurso
+    - criacao - status code 201
+    - atualizacao - status code 204 ou 200
+
+   -->
+
+<!-- 
+
+    PATCH
+
+    - atualizacao de apenas um registro
+    -->
+<!-- 
+
+    DELETE
+
+    - remover recurso
+    -n seguro, idempotente
+    -->
+
+<!-- 
+
+      HEADER
+
+      - Sao informacoes adicionais q usamos para o pedido ou resposta
+      - sintaxe -> Nome: valor
+
+      General Header
+
+      Nothing to do with the HTTP body’s content being transferred but it contains general information about the communication such as the date and time on which the request/response was generated. This header is common to both Request and Response. Example
+
+      Date:Tue, 17 Nov 2015 16:39:15 GMT
+
+      Request/Response Headers
+
+      
+      Request Header is present when you make a request to the server and the response header is present when the server sends a response back to the client/browser.
+
+      Request Header contains information about the request such as the URL that you have requested, the method(GET, POST, HEAD) ,the browser used to generate the request and other info. Example
+
+      User-Agent:”Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0″
+
+      The term browser is also called user-Agent. So even a simple request to a page involves sending the information about your browser and the operating system you are using. You can see from the above Header field that i am using Windows 10 and Firefox 41.0 browser.
+
+      Response Header is received by the browser from the server after the user sends a request for a particular page or resource and it contains information such as the encoding used in the content, the server software that is used on the server machine to generate the response and other information. Example
+
+      Server:nginx
+
+      Most of the sites usually hide their server information in order to make it hard for hackers to know which software is being used on the server.
+     -->
+
+<!-- 
+
+  BODY
+
+  - content/message body which is the actual data you want to fetch. The content can contain your HTML code or an image or your CSS stylesheets
+
+ -->
+
+<!-- 
+
+  STATUS CODE
+
+  - 100 -> continue                                       
+  - 200 -> ok (GET, POST), 201 -> created(PUT), 204 -> no content (DELETE, PUT)
+  - 301 -> movido, 302 => erro ao localizar recurso
+  - 400 -> bad request (pedido mal feito), 401 -> n autorizado a acessar um recurso, 404 -> n encontrou recurso, 405 -> metodo n autorizado.
+  - 500 -> erro interno de servidor, 503 -> servico n disponivel no momento
+ -->

@@ -1,0 +1,320 @@
+<!-- 
+    Form
+    
+    atributos basicos:
+    -action : para onde os valores de entrada vao
+    -method : qual metodo de mandar os valores
+
+    
+ -->
+
+<!-- 
+     Fieldset: 
+    -agrupamento de campos 
+    -mesmo proposito
+    -semantico
+    -acessibilidade
+
+    Atributos especiais:
+    -disabled:desabilita todos elementos internos, assim n serao enviados ao submeter o formulario
+
+    form: o id de um formulario ao qual esse fieldset pertence, assim o fieldset n precisa estar dentro do formulario
+
+    name: nome do grupo
+
+    <legend> - nome do agrupamento, sendo que deve ser o primeiro elemento do fieldset
+  -->
+
+<!-- <form id="contato" action="" method="">
+  <button>Enviar</button>
+</form>
+
+<fieldset form="contato" name="inputs-contato">
+  <legend>contato</legend>
+  <label for="">Nome</label>
+  <input type="text" />
+</fieldset> -->
+
+<!-- 
+     Label
+
+     -associar e identificar uma ou mais tag de entrada de dados
+     -acessibilidade
+     -pode clicar e aponta para a tag de entrada de dados
+
+     atributos:
+     
+     -for: fazer conexao do label e a tag de entrada de dado, eh feita via id do input, e funciona com elementos especificos
+  -->
+
+<!-- <label for="nome">nome completo</label>
+<input type="text" id="nome" /> -->
+
+<!-- 
+    Button
+
+    Atributos Comuns:
+    -Type : submit, reset (reseta o campo), button
+    -Disabled : impede de clicar botao
+    -Form : linka com um form, assim ao ser clicado, envia o formulario (feito por id)
+ -->
+
+<!-- 
+     Datalist
+
+     -lista de valores como sugestao a uma tag input
+     -valores sugestivos e n obrigatorios
+     -usuario poderao selecionar um dos valores, ou colocar um valor diferente da sugestao
+
+    Tipos de input suportados: text, search, url, date, month, week, datatime-local
+  -->
+
+<!-- <input type="text" list="fruitsdata" placeholder="Escolha uma fruta" />
+<datalist id="fruitsdata">
+  <option>apple</option>
+  <option>banana</option>
+  <option>mango</option>
+  <option>orange</option>
+  <option>cherr</option>
+</datalist>
+<input type="color" list="fruitsdata" /> -->
+
+<!-- 
+  tag input
+
+  -aceita diversos tipos de dados
+  -muitas combinacoes
+  
+  atributos basicos:
+  -type - pesquisar quais aceitam, tem date, email, number, password...
+  -name
+  -id
+
+  atributos comuns:
+  -autocomplete: completa com dado mais frequentes
+  -autofocus: foca em um elemento. So foca em um elemento que tenha ele de atributo, se tiver mais, vai focar so no primeiro
+  -disabled
+  -readonly - mesma funcao do disabled, porem ele n fica opaco (quase todos)
+  -value
+  -form - linka o input com algum form (quase todos)
+  -name
+  -required : dado obrigatorio
+  -placeholder
+
+ -->
+
+<!-- 
+  input com type password
+
+  atributos aceitaveis:
+  -minlength
+  -maxlength
+  -pattern="[0-9a-fA-F]{4,8}"
+  -readonly
+  -disabled
+  -required
+  -inputmode='numeric' - faz com que mobile apareca teclado so numerico
+  -autocomplete
+  -->
+
+<!-- <form action="">
+  <input
+    type="password"
+    placeholder="Insira sua senha"
+    pattern="[0-9a-fA-F]{4,8}"
+    title="HEX de min 4 e max 8"
+  />
+  <button type="submit">Enviar</button>
+</form> -->
+
+<!-- input com type email 
+  
+  -atributos:
+
+  -placeholder
+  -readonly/disabled/
+  -value
+  -required
+  -multiple
+  -minlenght
+  -maxlength
+  -pattern : regrinhas
+  -title
+
+-->
+
+<!-- <form action="">
+  <input type="email" pattern=".+\.com\.br" title="Only rocketseat" />
+  <button type="submit">Enviar</button>
+</form> -->
+
+<!-- 
+  input com type url
+
+  atributos: 
+  -placholder
+  -readonly;disabled
+  -value
+  -required
+  -min max lenght
+  -pattern=".*\.com\.br.*"
+ -->
+
+<!-- <form action="">
+  <input
+    type="url"
+    pattern=".*\.com\.br.*"
+    title="apenas dominios .com.br serao aceitos"
+  /><button type="submit">Enter</button>
+</form> -->
+
+<!-- 
+  input com type file
+
+  atributos: 
+  -value - contem o arquivo a ser enviado
+  -accept: descreve q tipos de arquivos serao aceitos
+  -files - a lista de arquivo ou arquivos
+  -multiple - selecao de varios arquivos
+
+
+  Para envios dos arquivos, o form deve utilizar o metodo POST e o atributo "enctype" como "multipart/form-data"
+  
+ -->
+
+<!-- input com type color  -->
+
+<!-- <input type="color" /> -->
+
+<!-- 
+  input com type checkbox
+
+  atributos: 
+  -globais
+  -value - valor q aquele campo contem, se n tiver presente, padrao eh on
+  -ckecked - deixar o campo marcado por padrao
+ -->
+
+<!-- <label for="subscribe">Receber notificacao</label>
+<input type="checkbox" id="subscribe" name="subscribe" checked />
+
+<fieldset>
+  <legend>Choose your interests</legend>
+  <div>
+    <input type="checkbox" id="coding" name="interest" value="coding" checked />
+    <label for="coding">Coding</label>
+  </div>
+  <div>
+    <input type="checkbox" id="music" name="interest" value="music" checked />
+    <label for="music">Music</label>
+  </div>
+</fieldset> -->
+
+<!-- 
+  input com type radio - serve para selecionar uma unicao opcao entre varias
+
+  atributos:
+
+  -checked
+  -value
+ -->
+
+<!-- <fieldset>
+  <legend>Bora tomar um cafe?</legend>
+
+  <label for="yep">sim</label>
+  <input type="radio" id="yep" name="coffee" value="yes" />
+  <label for="nono">não</label>
+  <input checked type="radio" id="nono" name="coffee" value="no" />
+</fieldset> -->
+
+<!-- 
+  input com type textarea
+
+  atributos:
+  -id
+  -name
+  -rows e cols
+  -maxlenght e minlength
+  -wrap
+ -->
+
+<!-- 
+   tag select: fornece menu de opcoes
+
+   <option> - contem as opcoes a serem selecionadas. Precisa de atributo value
+  -->
+<!-- <label for="carselect">Qual modelo do carro</label>
+<br />
+<select name="carmodel" id="carselect">
+  <option value="fiat">Uno</option>
+  <option value="audi">A3</option>
+  <option value="bmw">X6</option>
+</select> -->
+
+<!-- 
+  input com type search - para campos de busca
+
+  atributos:
+  -list / <datalist>
+  -pattern
+  -aria-label - quando n podemos colocar a tag label para acessibilidade, usamos o atributo aria-label
+
+ -->
+
+<!-- 
+  input com type number: entrada de numeros
+
+
+  atributos:
+
+  -min/max
+  -step - pula o valor definido
+  -->
+<!-- <form action="">
+  <input type="number" min="2" max="99" />
+  <button>Enviar</button>
+</form> -->
+
+<!-- 
+  input com type range - controle para selecionar um valor numerico. Slider ou dial control
+
+  atributos:
+
+  -min/max
+  -step - passos, pula pelo valor definido
+
+
+ -->
+
+<!-- <input type="range" min="0" max="99" step="10" /> -->
+
+<!-- <input type="date" /> -->
+
+<!-- <form action="" id="contato"></form>
+
+<fieldset form="contato" name="contato-info">
+  <legend>Contato</legend>
+
+  <label for="name">Nome</label>
+  <br />
+  <input type="text" id="name" name="name" />
+
+  <br />
+  <br />
+
+  <label for="email">Email</label>
+  <br />
+  <input type="email" id="email" name="email" />
+
+  <br />
+  <br />
+
+  <label for="message">Mensagem</label>
+  <br />
+  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+  <br />
+  <br />
+  <button type="submit">Enviar</button>
+</fieldset> -->
