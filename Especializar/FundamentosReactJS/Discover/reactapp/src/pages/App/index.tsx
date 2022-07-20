@@ -1,11 +1,21 @@
 import { useEffect, useState } from 'react';
-import { Card } from '../../components/Card';
+import { Card, CardProps } from '../../components/Card';
 import './styles.css';
+
+type ProfileResponse = {
+  name: string;
+  avatar_url: string;
+};
+
+type User = {
+  name: string;
+  avatar: string;
+};
 
 export function App() {
   const [studentName, setStudentName] = useState('');
-  const [students, setStudents] = useState([]);
-  const [user, setUser] = useState({ name: '', avatar: '' });
+  const [students, setStudents] = useState<CardProps[]>([]);
+  const [user, setUser] = useState<User>({} as User);
 
   function handleAddStudent() {
     const newStudent = {
@@ -22,10 +32,11 @@ export function App() {
   useEffect(() => {
     fetch('https://api.github.com/users/amadeulee')
       .then(response => response.json())
-      .then(data => {
+      .then(data => data as ProfileResponse)
+      .then(dataFinal => {
         setUser({
-          name: data.name,
-          avatar: data.avatar_url,
+          name: dataFinal.name,
+          avatar: dataFinal.avatar_url,
         });
       });
   }, []);
@@ -42,7 +53,7 @@ export function App() {
       <input
         type="text"
         value={studentName}
-        placeholder="Insira seu nome"
+        placeholder="Insira seus nome"
         onChange={e => {
           setStudentName(e.target.value);
         }}
