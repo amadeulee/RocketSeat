@@ -1,0 +1,12 @@
+- Single page application - cada vez q navegar pra uma tela diferente ele carrega so o conteudo que precisa mudar, e n recarrega a aplicacao toda.
+
+
+
+babel preset env - vai entender qual ambiente a aplicacao vai rodar, vai dizer ao babel o que ele precisa converter do codigo
+
+ 
+
+
+
+
+
