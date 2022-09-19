@@ -4,9 +4,41 @@
 
 babel preset env - vai entender qual ambiente a aplicacao vai rodar, vai dizer ao babel o que ele precisa converter do codigo
 
+
+Componentes - formas de encapsular uma quantidade de codigo dentro de um unico elemento. Esse elemento tem sua propria funcionalidade, estrutura e estilirização. Forma de dividir a aplicação em varios pedaços, e que quando conectados formam o app. Eh uma função que retorna um HTML
+
+
+3 conceitos mais importantes do React
+-Componente
+-Propriedade
+-Estado	
+
+
+PROPRIEDADES : Sao informacoes/variaveis que posso passar para o componente funcionar de forma diferente.
+
+
+**QUANDO PERCEBEMOS QUE ALGUMA COISA ESTÁ REPETINDO DENTRO DA NOSSA APLICAÇÃO, NA MAIORIA DAS VEZES FAZ SENTIDO CRIAR UM COMPONENTE PARA ENCAPSULAR
  
+**FRAGMENT -> TAG DO HTML SEM NENHUM NOME <> </>
+
+**O REACT NAO FICA MONITORANDO AS VARIAVEIS PARA VER SE TEM SEUS VALORES ALTERADO PARA ENTAO RENDERIZAR OS CONTEUDO DOS COMPONENTES EM TELA.
+
+
+ESTADO : variaveis que o react vai monitorar, e toda vez q o valor dessas variaveis mudarem, ai sim ele vai renderizar e exibir o conteudo do componente de novo
+
+
+O react nao busca ficar observando cada variavel da aplicacao para ver se teve alteração, assim seria menos performatico. Por isso usa estados, que eles observam quando há alteração neles e re renderizam
+
+
+*IMUTABILIDADE: uma variavel nunca vai poder ter o seu valor alterado, vai receber sempre um novo valor. Sempre crio um novo espaco na memoria contendo minha nova informação do que alterar uma informação que já está salvo na memoria
 
 
 
 
+USEEFFECT - serve para disparar uma função quando algo acontecer na aplicação.
 
+
+
+**Pq que as vezes tem um console repetido no terminal?
+
+Pois quando renderiza pela primeira vez, vc renderiza o estado vazio, e quando vc faz alteração de estado/variavel, vc está renderizando novamente, assim faz o console 2 vezes
