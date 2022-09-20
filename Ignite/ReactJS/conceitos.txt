@@ -42,3 +42,10 @@ USEEFFECT - serve para disparar uma função quando algo acontecer na aplicaçã
 **Pq que as vezes tem um console repetido no terminal?
 
 Pois quando renderiza pela primeira vez, vc renderiza o estado vazio, e quando vc faz alteração de estado/variavel, vc está renderizando novamente, assim faz o console 2 vezes
+
+
+* TypeScript no React serve para tipar as propriedades que os componentes vao receber. Os estados
+
+
+
+- Sintese
