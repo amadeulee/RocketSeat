@@ -1,3 +1,6 @@
 [submodule "Ignite/ReactJS/Ignite/ReactJS/Desafio-01/ignite-template-reactjs-conceitos-do-react"]
 	path = Ignite/ReactJS/Ignite/ReactJS/Desafio-01/ignite-template-reactjs-conceitos-do-react
 	url = https://github.com/rocketseat-education/ignite-template-reactjs-conceitos-do-react.git
+[submodule "Ignite/ReactJS/Desafio-02/Ignite/ReactJS/Desafio-02/Challenge-02"]
+	path = Ignite/ReactJS/Desafio-02/Ignite/ReactJS/Desafio-02/Challenge-02
+	url = https://github.com/amadeulee/Challenge-02.git
