@@ -47,5 +47,11 @@ Pois quando renderiza pela primeira vez, vc renderiza o estado vazio, e quando v
 * TypeScript no React serve para tipar as propriedades que os componentes vao receber. Os estados
 
 
+*PQ USAR EXPORT FUNCTION AO INVES DE EXPORT DEFAULT
+- usando o export function a gente limita o nome do componente que vamos utilizar em outro local para apenas o nome declarado dentro do componente, assim ajuda no nosso controle, pois quem está importando o componente nao consegue alterar o nome. Alem disso a importacao automatica do edito de texto fica mais inteligente.
+- usando o export default, quem define o nome do componente nao eh quem está exportando o componente, e sim quem está importando
 
-- Sintese
+
+*PQ USAR STYLED COMPONENTS?
+- permite usar encadeamento
+- quando usa styled components, a nossa estilirizacao fica dentro dos escopo apenas daquele componente q estamos estilirizando. O nosso CSS sempre vai ficar mt proximo do componente em si.
